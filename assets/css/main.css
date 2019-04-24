@@ -1,6 +1,28 @@
 @import url(font-awesome.min.css);
 /*@import url(awsomTest.css);*/
-/*Abou*/
+/*custom*/
+
+/*custom*/
+.columnGRID {
+ display: grid;
+/*  float: left;*/
+   grid-template-columns:  33% 33% 33%;
+/*  padding: 10px;*/
+}
+
+
+/*
+.grid{
+    border: solid;
+    display: grid;
+    grid-template-rows: 12% 23% 32% 25% 14%;
+    padding: 0.5em;
+    grid-row-gap: 2px;
+    box-shadow: 0 10px 12px -6px black;
+    border-width:thin;
+    background-color: #a9a3a824;
+}
+*/
 
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
@@ -181,7 +203,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-        font-size: 18px; /*Abou*/
+        font-size: 18px; /*custom*/
 	}
 
 	h1, h2, h3, h4, h5, h6 {
