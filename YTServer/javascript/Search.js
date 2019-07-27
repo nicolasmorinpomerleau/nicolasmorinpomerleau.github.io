@@ -212,24 +212,24 @@ function getCaption(ajax_response) {
     if (xmlDoc.getElementsByTagName("transcript").length > 0) {
       // Loop the results of the xmlDoc:
       for (var i = 0; i < xmlDoc.getElementsByTagName("transcript")[0].childNodes.length; i++) {
-        console.log(xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].innerHTML);
+//        console.log(xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].innerHTML);
         scriptText[i] = xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].innerHTML;
-        console.log(xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue);
+//        console.log(xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue);
         scriptTime[i] = xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue;
         scriptTime[i] = time_convert(scriptTime[i]);
-        console.log(scriptTime[i]);
+//        console.log(scriptTime[i]);
         HTML_captions += xmlDoc.getElementsByTagName("transcript")[0].childNodes[i].innerHTML + "<br/>";
       }
     } else {
       // Loop the results of the ajax_response;
       for (var i = 0; i < ajax_response.getElementsByTagName("transcript")[0].childNodes.length; i++) {
-        console.log(ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML);
+//        console.log(ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML);
         scriptText[i]= ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML; 
 //          Temps = ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue;
-        console.log(ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue);
+//        console.log(ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue);
         scriptTime[i]= ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue;
         scriptTime[i] = time_convert(scriptTime[i]);
-        console.log(scriptTime[i]);
+//        console.log(scriptTime[i]);
         HTML_captions += ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML + "<br/>";
       }
     }
@@ -289,7 +289,18 @@ function runSearch () {
     search = document.getElementById("searchInYT").value;
     indexOF = new Array(); 
 //    index = $.inArray(search, scriptText);
+//    searchText = new Array();
     
+//    Remove the old search result
+    table = document.getElementById("#tbl");
+    if(table){
+        $("#tbl").each(function(){
+    //                if($(this).is(":checked")){
+                        $(this).parents("tr").remove();
+    //                }
+                });
+    }
+
     scriptText.forEach(myFunction);
     
     function myFunction (item, index) {
@@ -299,7 +310,6 @@ function runSearch () {
     
     function display (item, index){
         tbl = document.getElementById('tbl');
-
         if(item){
         addRow(tbl, scriptTime[index], scriptText[index]);
         }
