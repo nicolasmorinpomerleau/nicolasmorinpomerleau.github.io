@@ -292,7 +292,7 @@ function runSearch () {
 //    searchText = new Array();
     
 //    Remove the old search result
-    table = document.getElementById("#tbl");
+    table = document.getElementById("tbl");
     if(table){
         $("#tbl").each(function(){
     //                if($(this).is(":checked")){
