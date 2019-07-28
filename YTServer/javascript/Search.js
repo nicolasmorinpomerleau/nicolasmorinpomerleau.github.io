@@ -276,8 +276,9 @@ function time_convert(num)
   var val = num % 3600;
   var minutes = Math.floor(val / 60);
   var sec = val % 60;
+      
     if (hours.length == 1){
-        hours ="0" + h;
+        hours ="0" + hours;
     }
    if (minutes.length == 1){
         minutes ="0" + minutes;
