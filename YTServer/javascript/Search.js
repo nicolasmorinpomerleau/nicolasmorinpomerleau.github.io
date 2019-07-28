@@ -228,7 +228,8 @@ function getCaption(ajax_response) {
         scriptText[i]= ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML; 
 //          Temps = ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue;
 //        console.log(ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue);
-        scriptTime[i]= ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].nodeValue;
+        scriptTime[i]= ajax_response.getElementsByTagName("transcript")[0].childNodes[i].attributes[0].textContent;
+//        ********   nodeValue replaced by textContent ********
         scriptTime[i] = time_convert(scriptTime[i]);
 //        console.log(scriptTime[i]);
         HTML_captions += ajax_response.getElementsByTagName("transcript")[0].childNodes[i].innerHTML + "<br/>";
@@ -371,6 +372,30 @@ $(document).click(function(event) {
     Dotes = text.includes(":");
     if(event.target.localName =="td" && Dotes)
     {
+//        IndexOfHours = text.indexOf(":");
+//        if(IndexOfHours == 1){
+//            h = text.substr(0, IndexOfHours);
+//            h = "0" + h;
+//            h = h.concat("h");
+//        }
+//        else{
+//            h = text.substr(0, IndexOfHours);
+//            h = h.concat("h");
+//        }
+//
+//        
+//        IndexOfminutes = text.lastIndexOf(":");
+//        if(IndexOfminutes == 4 || IndexOfminutes == 3){
+//            IndexOfminutes = IndexOfminutes -1;
+//            m = text.substr(IndexOfminutes, 1);
+//            m = "0" + m;
+//            m = m.concat("m");
+//        }
+//        else{
+//            m = text.substr(3, 2);
+//            m = m.concat("m");        
+//        }
+        
         h= text.substr(0, 2);
         h = h.concat("h");
 
@@ -379,9 +404,9 @@ $(document).click(function(event) {
 
         s= text.substr(6, 2);
         s = s.concat("s");
-
+        
         Time = "";
-        Time = Time.concat("&t=");
+        Time = Time.concat("#t=");
         Time = Time.concat(h);
         Time = Time.concat(m);
         Time = Time.concat(s);
