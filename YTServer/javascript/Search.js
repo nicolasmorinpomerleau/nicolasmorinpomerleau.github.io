@@ -267,12 +267,26 @@ function resetVideoHeight() {
 //    Convert numbers into time format
 function time_convert(num)
   { 
+      
+//      to do
+//        ad zero to a signle digit 
+//        correct the calculation of s
+        
   var hours = Math.floor(num / 3600);  
-
-  var minutes = num % 3600;
-  var minutes = Math.floor(minutes / 60);
-  var sec = minutes % 60;
-  return hours + ":" + minutes + ":" + sec;   
+  var val = num % 3600;
+  var minutes = Math.floor(val / 60);
+  var sec = val % 60;
+    if (hours.length == 1){
+        hours ="0" + h;
+    }
+   if (minutes.length == 1){
+        minutes ="0" + minutes;
+    }
+   if (sec.length == 1){
+        sec ="0" + sec;
+    }
+      
+      return hours + ":" + minutes + ":" + sec;   
 }
     
 // Fill the data "captions" in a HTML "div" control.
