@@ -103,6 +103,8 @@ function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{
 
 var scriptTime = new Array(); 
 var scriptText = new Array();
+ scriptText = [" you test", " you test1"," you test2"," you test3"," you test4"," you test5","bou"];
+scriptTime = ["00:08:02", "00:02:13","00:03:01","00:14:01","00:15:01","00:17:01","00:16:01"];
 
 var parser, xmlDoc;
 var HTML_captions = "";
@@ -118,7 +120,6 @@ video_id = search.indexOf("v=");
 ampersandPosition = search.indexOf("&");
 var dataAuto,dataMan ;
 //var scriptTime = new Array(); 
-//var scriptText = new Array();
     
 //var video_id = window.location.search.split('v=')[1];
 //var ampersandPosition = video_id.indexOf('&');
@@ -293,12 +294,19 @@ function runSearch () {
     
 //    Remove the old search result
     table = document.getElementById("tbl");
-    if(table){
-        $("#tbl").each(function(){
-    //                if($(this).is(":checked")){
-                        $(this).parents("tr").remove();
-    //                }
-                });
+    rows = table.getElementsByTagName("tr");
+    Nbrows = rows.length;
+//    rows = $('tbl').length;
+//    table.deleteRow(i)
+    if(table && Nbrows != 0 ){
+//        $("#tbl").each(function(){
+//                        $(this).parents('tr').remove();
+//            for(i=Nbrows-1; i < 0; i--){
+//                table.deleteRow(i)
+//            }
+                    $("#tbl").find("tr").remove();
+
+//                });
     }
 
     scriptText.forEach(myFunction);
@@ -306,15 +314,23 @@ function runSearch () {
     function myFunction (item, index) {
        indexOF[index] = item.includes(search); 
     };
+    SearchResult = 0;
     indexOF.forEach(display);
     
     function display (item, index){
         tbl = document.getElementById('tbl');
         if(item){
         addRow(tbl, scriptTime[index], scriptText[index]);
+            SearchResult++;
         }
     };
   
+    if(SearchResult == 0){
+        alert("No corresponding result found! ");
+    }
+//    else{
+//        alert(SearchResult + " :result found.");
+//    }
 } //function runSearch
 
 
@@ -327,6 +343,11 @@ function runSearch () {
 
     td.innerHTML = val;
     tr.appendChild(td)
+      
+    result = val.includes(":");
+      if(result){
+          td.classList.add("cursor");
+      }
   }
 
 //for start time
@@ -341,9 +362,38 @@ function runSearch () {
     tbl.appendChild(tr)
   }
 
-//$(document).click(function(event) {
-//    var text = $(event.target).text();
-//});
+//function addCusor(val){
+//    val.setAttribute("class", "cursor");
+//}
+
+$(document).click(function(event) {
+    var text = $(event.target).text();
+    Dotes = text.includes(":");
+    if(event.target.localName =="td" && Dotes)
+    {
+        h= text.substr(0, 2);
+        h = h.concat("h");
+
+        m= text.substr(3, 2);
+        m = m.concat("m");
+
+        s= text.substr(6, 2);
+        s = s.concat("s");
+
+        Time = "";
+        Time = Time.concat("&t=");
+        Time = Time.concat(h);
+        Time = Time.concat(m);
+        Time = Time.concat(s);
+        alert("Voici le temps cliqué :"+Time);
+        
+        link = document.getElementById('VidID').src;
+        link = link.concat(Time);
+        document.getElementById('VidID').src = link;
+    }
+
+//    alert("Voici le temps cliqué :"+Time);
+});
 
 //   jQuery("#tbl").keyup(function(){
 //
