@@ -57,51 +57,14 @@ function handleSignouClick(){
 	gapi.auth2.getAuthInstance().signOut();
 }
 
-// Display channel Data
-// **************** NOT USED ****************
-//************************************************
-//function showChannelData(data){
-//	const channelData = document.getElementById('channel-data');
-//	channelData.innerHTML = data;
-//}
-
-// Get channel from API
-// **************** NOT USED ****************
-//************************************************
-//function getChannel(channel){
-//	gapi.client.youtube.channels
-//	.list({
-//		part: 'snippet,contentDetails,statistics',
-//		forUsername: channel
-//	})
-//	.then(response => {
-//		console.log(response);
-//		const channel = response.result.items[0];
-//		
-//		const output = `
-//			<ul class="collection">
-//				<li class="collection-item">Title: ${channel.snippet.title}</li>
-//				<li class="collection-item">ID: ${channel.id}</li>
-//				<li class="collection-item">Subscribers: ${channel.statistics.subscriberCount}</li>
-//				<li class="collection-item">Views: ${channel.statistics.viewCount}</li>
-//				<li class="collection-item">Videos: ${channel.statistics.videoCount}</li>
-//			</ul>
-//			<p>${channel.snippet.description}</p>
-//			<hr />
-//			<a class="btn red darken-2" target="_blnak" href="https://youtube.com/${channel.snippet.customUrl}">Visit Channel</a>
-//		`;
-//		showChannelData(output);
-//	})
-//	.catch(err => alert('No Channel By THat Name'));
-//}
-
 
 //====================================================================================
 //                              Start here the search into YT
 //====================================================================================
 function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
-var scriptTime = new Array(); 
+var scriptTime = new Array();
+//var scriptTimeHMS = new Array();
 var scriptText = new Array();
  scriptText = [" you test", " you test1"," you test2"," you test3"," you test4"," you test5","bou"];
 scriptTime = ["00:08:02", "00:02:13","00:03:01","00:14:01","00:15:01","00:17:01","00:16:01"];
@@ -111,6 +74,8 @@ var HTML_captions = "";
 
 var ytApiKey = "AIzaSyCCf-S5kFXdDTWXc8cmCqBLXtjpt_5T18M";
 var YTTitle;
+
+var video_id = "";
 
 function run () { 
 search = document.getElementById("search").value;
@@ -244,10 +209,10 @@ setTimeout(fillData(), 2000);
   }
 }
 
-$("#results").html("");
-    $.get("tpl/item.html", function(data) {
-        $("#results").append(tplawesome(data, [{"title":YTTitle, "videoid":video_id}]));
-    });
+//$("#results").html("");
+//    $.get("tpl/item.html", function(data) {
+//        $("#results").append(tplawesome(data, [{"title":YTTitle, "videoid":video_id}]));
+//    });
     
     
 //    $.ajax({
@@ -267,11 +232,6 @@ function resetVideoHeight() {
 //    Convert numbers into time format
 function time_convert(num)
   { 
-      
-//      to do
-//        ad zero to a signle digit 
-//        correct the calculation of s
-        
   var hours = Math.floor(num / 3600);  
   var val = num % 3600;
   var minutes = Math.floor(val / 60);
@@ -306,24 +266,14 @@ function fillData() {
 function runSearch () {
     search = document.getElementById("searchInYT").value;
     indexOF = new Array(); 
-//    index = $.inArray(search, scriptText);
-//    searchText = new Array();
     
 //    Remove the old search result
     table = document.getElementById("tbl");
     rows = table.getElementsByTagName("tr");
     Nbrows = rows.length;
-//    rows = $('tbl').length;
-//    table.deleteRow(i)
-    if(table && Nbrows != 0 ){
-//        $("#tbl").each(function(){
-//                        $(this).parents('tr').remove();
-//            for(i=Nbrows-1; i < 0; i--){
-//                table.deleteRow(i)
-//            }
-                    $("#tbl").find("tr").remove();
 
-//                });
+    if(table && Nbrows != 0 ){
+                    $("#tbl").find("tr").remove();
     }
 
     scriptText.forEach(myFunction);
@@ -345,9 +295,7 @@ function runSearch () {
     if(SearchResult == 0){
         alert("No corresponding result found! ");
     }
-//    else{
-//        alert(SearchResult + " :result found.");
-//    }
+
 } //function runSearch
 
 
@@ -367,10 +315,6 @@ function runSearch () {
       }
   }
 
-//for start time
-//#t=31m08s
-//to do
-//    vider les deux tableaux pour une nouvelle recherche
     
   function addRow(tbl, val_1, val_2) {
     var tr = document.createElement('tr');
@@ -379,76 +323,56 @@ function runSearch () {
     tbl.appendChild(tr)
   }
 
-//function addCusor(val){
-//    val.setAttribute("class", "cursor");
-//}
 
 $(document).click(function(event) {
     var text = $(event.target).text();
     Dotes = text.includes(":");
     if(event.target.localName =="td" && Dotes)
     {
-//        IndexOfHours = text.indexOf(":");
-//        if(IndexOfHours == 1){
-//            h = text.substr(0, IndexOfHours);
-//            h = "0" + h;
-//            h = h.concat("h");
-//        }
-//        else{
-//            h = text.substr(0, IndexOfHours);
-//            h = h.concat("h");
-//        }
+//        h= text.substr(0, 2);
+//        h = h.concat("h");
 //
-//        
-//        IndexOfminutes = text.lastIndexOf(":");
-//        if(IndexOfminutes == 4 || IndexOfminutes == 3){
-//            IndexOfminutes = IndexOfminutes -1;
-//            m = text.substr(IndexOfminutes, 1);
-//            m = "0" + m;
-//            m = m.concat("m");
-//        }
-//        else{
-//            m = text.substr(3, 2);
-//            m = m.concat("m");        
-//        }
+//        m= text.substr(3, 2);
+//        m = m.concat("m");
+//
+//        s= text.substr(6, 2);
+//        s = s.concat("s");
         
-        h= text.substr(0, 2);
-        h = h.concat("h");
+//        Time = "";
+//        Time = Time.concat("#t=");
+//        Time = Time.concat(h);
+//        Time = Time.concat(m);
+//        Time = Time.concat(s);
+//        alert("Voici le temps cliqué :"+Time);
+//        link = document.getElementById('VidID').src;
+//        link = link.concat(Time);
+//        link = link.replace("embed","&output=embed");
+//        document.getElementById('VidID').src = link;
+        timetbl = text.split(':');
+        newTime = (timetbl[0] * 3600) + (timetbl[1] * 60) + timetbl[2];
+        player.seekTo(newTime);
 
-        m= text.substr(3, 2);
-        m = m.concat("m");
-
-        s= text.substr(6, 2);
-        s = s.concat("s");
-        
-        Time = "";
-        Time = Time.concat("#t=");
-        Time = Time.concat(h);
-        Time = Time.concat(m);
-        Time = Time.concat(s);
-        alert("Voici le temps cliqué :"+Time);
-//        link = document.getElementById('search').value;
-        link = document.getElementById('VidID').src;
-        link = link.concat(Time);
-        link = link.replace("embed","&output=embed");
-        document.getElementById('VidID').src = link;
     }
-//http://www.youtube.com/embed/BPeFy4iyzn0#t=00h04m50s
-//    alert("Voici le temps cliqué :"+Time);
 });
-
-//   jQuery("#tbl").keyup(function(){
-//
-//     for(i=0;i<searchbarresultarray.length;i++){
-//               htmloutput= htmloutput+"<tr onclick="window.location='#';"><td class='searchbarresult' id='"+i+"'>"result"</td></tr>";
-//                }
-//        jQuery("#tbl").html(htmloutput);
-//
-//    });
-//
-//    jQuery(document).on('mouseover','.tbl',function(){
-//        jQuery(this).css( "background-color", "black" ); 
-//     });
 
 
 //https://www.youtube.com/watch?v=BPeFy4iyzn0
+
+//===================================================================================
+//for the new YT control player
+//===================================================================================
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-placeholder', {
+        width: 600,
+        height: 400,
+        videoId: video_id,
+        playerVars: {
+            color: 'white',
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+//        events: {
+//            onReady: initialize
+//        }
+    });
+}
