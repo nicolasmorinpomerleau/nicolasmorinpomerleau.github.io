@@ -157,10 +157,12 @@ if(ampersandPosition != -1) {
     if (dataMan){
           console.log("****** Data manual *******");
           console.log(dataMan);
+        onYouTubeIframeAPIReady()
           getCaption(dataMan);
     }else{
           console.log("======= Data Auto =======");
           console.log(dataAuto);
+        onYouTubeIframeAPIReady()
           getCaption(dataAuto);
     }
  });
