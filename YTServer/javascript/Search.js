@@ -428,9 +428,10 @@ $(document).click(function(event) {
         Time = Time.concat(s);
         alert("Voici le temps cliqué :"+Time);
         link = document.getElementById('search').value;
-//        link = document.getElementById('VidID').src;
+        link2 = document.getElementById('VidID').src;
         link = link.concat(Time);
-        document.getElementById('VidID').src = link;
+        link3 = document.getElementById('VidID').src ;
+//        document.getElementById('VidID').src = link;
     }
 
 //    alert("Voici le temps cliqué :"+Time);
