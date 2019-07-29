@@ -430,9 +430,10 @@ $(document).click(function(event) {
 //        link = document.getElementById('search').value;
         link = document.getElementById('VidID').src;
         link = link.concat(Time);
+        link = link.replace("embed","v");
         document.getElementById('VidID').src = link;
     }
-
+//http://www.youtube.com/embed/BPeFy4iyzn0#t=00h04m50s
 //    alert("Voici le temps cliqué :"+Time);
 });
 
