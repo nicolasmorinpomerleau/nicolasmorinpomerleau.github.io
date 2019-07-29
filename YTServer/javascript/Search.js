@@ -429,9 +429,9 @@ $(document).click(function(event) {
         alert("Voici le temps cliqué :"+Time);
         link = document.getElementById('search').value;
         link2 = document.getElementById('VidID').src;
-        link = link.concat(Time);
-        link3 = document.getElementById('VidID').src ;
-//        document.getElementById('VidID').src = link;
+        link2 = link.concat(Time);
+//        link3 = document.getElementById('VidID').src ;
+        document.getElementById('VidID').src = link2;
     }
 
 //    alert("Voici le temps cliqué :"+Time);
