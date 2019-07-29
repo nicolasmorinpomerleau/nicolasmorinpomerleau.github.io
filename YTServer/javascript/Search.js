@@ -157,12 +157,12 @@ if(ampersandPosition != -1) {
     if (dataMan){
           console.log("****** Data manual *******");
           console.log(dataMan);
-        onYouTubeIframeAPIReady()
+        onYouTubeIframe()
           getCaption(dataMan);
     }else{
           console.log("======= Data Auto =======");
           console.log(dataAuto);
-        onYouTubeIframeAPIReady()
+        onYouTubeIframe()
           getCaption(dataAuto);
     }
  });
@@ -351,7 +351,7 @@ $(document).click(function(event) {
 //        link = link.replace("embed","&output=embed");
 //        document.getElementById('VidID').src = link;
         timetbl = text.split(':');
-        newTime = (timetbl[0] * 3600) + (timetbl[1] * 60) + timetbl[2];
+        newTime = (parseInt(timetbl[0]) * 3600) + (parseInt(timetbl[1]) * 60) + parseInt(timetbl[2]);
         player.seekTo(newTime);
 
     }
@@ -364,7 +364,8 @@ $(document).click(function(event) {
 //for the new YT control player
 //===================================================================================
 
-function onYouTubeIframeAPIReady() {
+//function onYouTubeIframeAPIReady() {
+function onYouTubeIframe (){
     player = new YT.Player('video-placeholder', {
         width: 600,
         height: 400,
