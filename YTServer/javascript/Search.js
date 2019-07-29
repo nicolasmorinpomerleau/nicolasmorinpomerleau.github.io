@@ -427,8 +427,8 @@ $(document).click(function(event) {
         Time = Time.concat(m);
         Time = Time.concat(s);
         alert("Voici le temps cliqué :"+Time);
-        
-        link = document.getElementById('VidID').src;
+        link = document.getElementById('search').value;
+//        link = document.getElementById('VidID').src;
         link = link.concat(Time);
         document.getElementById('VidID').src = link;
     }
