@@ -91,8 +91,7 @@ $("search").change(function(){
       video_id = search.substring(video_id+2, Length);
       run();
     }
-    
-}
+});
                    
 function run () { 
 
