@@ -77,22 +77,25 @@ var YTTitle;
 
 var video_id = "";
 
-function run () { 
-search = document.getElementById("search").value;
-Length = search.length;
-video_id = search.indexOf("v=");
-//EndPos =  Length - (video_id +1);
-ampersandPosition = search.indexOf("&");
-var dataAuto,dataMan ;
-//var scriptTime = new Array(); 
+$("search").change(function(){
+    search = document.getElementById("search").value;
+    Length = search.length;
+    video_id = search.indexOf("v=");
+    ampersandPosition = search.indexOf("&");
+    var dataAuto,dataMan ;
+
+    if(ampersandPosition != -1) {
+      video_id = search.substring(video_id+2, ampersandPosition);
+      run();
+    }else{
+      video_id = search.substring(video_id+2, Length);
+      run();
+    }
     
-//var video_id = window.location.search.split('v=')[1];
-//var ampersandPosition = video_id.indexOf('&');
-if(ampersandPosition != -1) {
-  video_id = search.substring(video_id+2, ampersandPosition);
-}else{
-  video_id = search.substring(video_id+2, Length);
 }
+                   
+function run () { 
+
 //  ******  For manual caption ******
    RequestMan =  "https://video.google.com/timedtext?v=";
    RequestMan = RequestMan.concat(video_id);
@@ -107,39 +110,6 @@ if(ampersandPosition != -1) {
    RequestAuto = RequestAuto.concat(Lang); 
 //    ***********************************
     
-//    alert(RequestMan);
-//        $.ajax({
-//        url: RequestMan,
-//        type: 'GET',
-//        success: function(data){
-//                  getCaption(data);
-//        }
-//    });
-    
-//    To Do
-//    choose the tmft format, and master it
-//    convert from the format choosed into Hours, minutes ans seconds
-    
-//Hint:
-//For automatic caption:
-//    Liens que ça fonctionne pour automatique:
-//    https://www.youtube.com/watch?v=D7ZL45xS39I&list=PLOU2XLYxmsIKW-llcbcFdpR9RjCfYHZaV&index=2
-//https://www.youtube.com/api/timedtext?v=ziGZj_jZ72E&lang=en&name=CC%20(English)
-//https://www.youtube.com/api/timedtext?v=ziGZj_jZ72E&caps=asr&key=yttt1&lang=en&name=CC%20(English)&fmt=srv3
-// good example to start at the time wanted: https://www.youtube.com/watch?v=PjDw3azfZWI#t=31m08s
-//For manual caption
-//https://video.google.com/timedtext?v=zenMEj0cAC4&id=0&lang=en
-
-//    Ted Talk Sugar
-//    https://www.youtube.com/watch?v=BPeFy4iyzn0
-   
-    
-//    $.get(RequestMan, function(data) {
-//        dataMan = data;
-//                  getCaption(dataMan);
-//      });
-    
-    
  $.when(
      $.get(RequestMan, function(data) {
         dataMan = data;
@@ -148,10 +118,6 @@ if(ampersandPosition != -1) {
       $.get(RequestAuto, function(data) {
             dataAuto = data;
       }),
-
-//        $.get("https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + video_id + "&key=" + ytApiKey, function(data) {
-//          YTTitle = data.items[0].snippet.title;
-//        })
     
  ).then(function(){
     if (dataMan){
@@ -166,7 +132,6 @@ if(ampersandPosition != -1) {
           getCaption(dataAuto);
     }
  });
-//   
     
 YTTitle = " Title..";
 // Parse the AJAX response and get the captions.
@@ -263,7 +228,6 @@ function fillData() {
 
 }
 } // function run
-
 
 function runSearch () {
     search = document.getElementById("searchInYT").value;
