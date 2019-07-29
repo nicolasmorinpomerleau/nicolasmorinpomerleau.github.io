@@ -276,14 +276,15 @@ function time_convert(num)
   var val = num % 3600;
   var minutes = Math.floor(val / 60);
   var sec = val % 60;
+  sec = sec.toFixed(0);
       
-    if (hours.length == 1){
+    if (hours.toString().length == 1){
         hours ="0" + hours;
     }
-   if (minutes.length == 1){
+   if (minutes..toString().length == 1){
         minutes ="0" + minutes;
     }
-   if (sec.length == 1){
+   if (sec..toString().length == 1){
         sec ="0" + sec;
     }
       
