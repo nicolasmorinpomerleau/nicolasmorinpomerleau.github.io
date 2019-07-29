@@ -281,10 +281,10 @@ function time_convert(num)
     if (hours.toString().length == 1){
         hours ="0" + hours;
     }
-   if (minutes..toString().length == 1){
+   if (minutes.toString().length == 1){
         minutes ="0" + minutes;
     }
-   if (sec..toString().length == 1){
+   if (sec.toString().length == 1){
         sec ="0" + sec;
     }
       
