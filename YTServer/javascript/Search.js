@@ -17,6 +17,7 @@ function handleClientLoad(){
 	gapi.load('client:auth2', initClient);
 }
 
+
 // Init API client library and set up sing in listeners
 function initClient(){
 	gapi.client.init({
@@ -77,7 +78,23 @@ var YTTitle;
 
 var video_id = "";
 
-$("search").change(function(){
+
+var app = angular.module('YouTubeApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.$watch('VideoID', function(newValue, oldValue) {
+  if (newValue == oldValue) {
+    return;
+  }
+//  Call Change function
+    change();
+//  player.cueVideoById(scope.videoid);
+    
+});
+});
+
+
+
+function change (){
     search = document.getElementById("search").value;
     Length = search.length;
     video_id = search.indexOf("v=");
@@ -86,12 +103,14 @@ $("search").change(function(){
 
     if(ampersandPosition != -1) {
       video_id = search.substring(video_id+2, ampersandPosition);
+//            alert("changes !!  "+ video_id);
       run();
     }else{
       video_id = search.substring(video_id+2, Length);
+//                    alert("changes !!  "+ video_id);
       run();
     }
-});
+};
                    
 function run () { 
 
