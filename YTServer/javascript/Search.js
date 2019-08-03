@@ -67,8 +67,8 @@ function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{
 var scriptTime = new Array();
 //var scriptTimeHMS = new Array();
 var scriptText = new Array();
- scriptText = [" bla bla you bla bla test", " tou  bla you bla bla test1"," bla bla bla bla you"," hphv bla bla you bla test3"," bla bla bla bla test4"," ybla bla bla you test5","bou"," you   bla bla bla bla test13"," you test11"," you test10","bou"," ho oho you test", " you test1","  bla bla bla bla test2"," you test3"," you test4"," you test5","bou"," you test13"," you  bla bla bla bla  test11","h ehgl  you test10","bou"];
-scriptTime = ["00:08:02", "00:02:13","00:03:01","00:14:01","00:15:01","00:17:01","00:20:01","00:14:01","00:16:01","00:22:01","00:21:01","00:08:02", "00:02:13","00:33:01","00:34:01","00:35:01","00:37:01","00:30:01","00:34:01","00:36:01","00:32:01","00:31:01"];
+// scriptText = [" bla bla you bla bla test", " tou  bla you bla bla test1"," bla bla bla bla you"," hphv bla bla you bla test3"," bla bla bla bla test4"," ybla bla bla you test5","bou"," you   bla bla bla bla test13"," you test11"," you test10","bou"," ho oho you test", " you test1","  bla bla bla bla test2"," you test3"," you test4"," you test5","bou"," you test13"," you  bla bla bla bla  test11","h ehgl  you test10","bou"];
+//scriptTime = ["00:08:02", "00:02:13","00:03:01","00:14:01","00:15:01","00:17:01","00:20:01","00:14:01","00:16:01","00:22:01","00:21:01","00:08:02", "00:02:13","00:33:01","00:34:01","00:35:01","00:37:01","00:30:01","00:34:01","00:36:01","00:32:01","00:31:01"];
 
 var parser, xmlDoc;
 var HTML_captions = "";
