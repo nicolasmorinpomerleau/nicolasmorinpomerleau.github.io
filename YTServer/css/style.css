@@ -1,4 +1,14 @@
-
+/*
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+.errspan {
+        float: right;
+        margin-right: 6px;
+        margin-top: -20px;
+        position: relative;
+        z-index: 2;
+        color: red;
+    }
+*/
 
 hr { 
 width: 100%;
@@ -6,10 +16,82 @@ margin-left: 0;
 margin-right: 0;
 height: 5px;
 background-color:#a9a9a940;
-/*opcaity: 0.3;*/
 }
 
-.cursor {
+.ClasseTime {
     cursor: pointer;
-    color: cornflowerblue
+    color: cornflowerblue;
+    width: 20%;
 }
+
+.ClasseText{
+    text-align: left;
+}
+
+tr{
+    border-bottom: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 60% 40%;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px 20px 10px;
+
+}
+.Classstbl{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height: 500px;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+.grid-containerSearch {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 70% 20%;
+  padding: 10px;
+}
+/*===================================*/
+/*For the txt seach box*/
+/*===================================*/
+/*
+.search {
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+}
+*/
+
+/*
+.search input {
+  width: 250px;
+  height: 32px;
+
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+*/
+
+/*
+.search input { text-indent: 32px;}
+.search .fa-search { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+*/
+
+/*input { font-family: 'FontAwesome', "far fa-search"; }*/
+/*===================================*/
