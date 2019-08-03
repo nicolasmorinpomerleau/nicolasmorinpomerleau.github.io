@@ -229,12 +229,12 @@ function run () {
     if (dataMan){
           console.log("****** Data manual *******");
           console.log(dataMan);
-        onYouTubeIframe()
+//        onYouTubeIframe()
           getCaption(dataMan);
     }else{
           console.log("======= Data Auto =======");
           console.log(dataAuto);
-        onYouTubeIframe()
+//        onYouTubeIframe()
           getCaption(dataAuto);
     }
  });
