@@ -116,7 +116,6 @@ myApp.directive('youtube', function($window) {
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       
-//      var player;
 
       $window.onYouTubeIframeAPIReady = function() {
 
@@ -166,7 +165,7 @@ myApp.directive('youtube', function($window) {
 //================================================================================
 
 
-function change (search){
+function change(search){
     
 //======================================
 //    Clean the seach result first
@@ -174,9 +173,9 @@ function change (search){
     table = document.getElementById("tbl");
     rows = table.getElementsByTagName("tr");
     Nbrows = rows.length;
-
+    document.getElementById('searchInYT').value = '';
     if(table && Nbrows != 0 ){
-                    $("#tbl").find("tr").remove();
+        $("#tbl").find("tr").remove();
     }
 //======================================
 //======================================
@@ -383,7 +382,7 @@ function runSearch () {
     tr.appendChild(td)
       
     result = val.includes(":");
-      if(result){
+      if(result && val.length == 8){
           td.classList.add("ClasseTime");
       }
       else{
