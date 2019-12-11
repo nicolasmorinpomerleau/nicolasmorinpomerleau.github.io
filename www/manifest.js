@@ -1,0 +1,13 @@
+{
+  "name": "Notifications Abou",
+  "icons": [
+    {
+      "src": "/icon_iOS_152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "density": 1.0
+    }
+  ],
+  "start_url": "http://amcreatives.ca/www/index.html",
+  "display": "standalone"
+}
