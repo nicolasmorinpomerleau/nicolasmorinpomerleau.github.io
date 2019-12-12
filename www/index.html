@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet"  href="css/jquery.mobile-1.4.5.min.css"/>
     <link rel="stylesheet" href="css/color.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="manifest.js"> </script>
@@ -58,7 +60,7 @@
     ****************************
 -->
 <div data-role="page" id="page1">
-    <div data-role="header" data-theme="a">
+    <div data-role="header" class="header" data-theme="a">
         <h1> Identification de la carte de membre</h1>
     </div> <!-- header -->
     <div role="main" data-role="content">
@@ -77,39 +79,50 @@
     ****************************
 -->
 <div data-role="page" id="page2">
-    <div data-role="header" data-theme="b">
-        <h1> </h1>
+    <div data-role="header" class="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
+            <h1> </h1>
+        <!-- <h1 style=" font-weight:normal !important;font-size: 1.1em;">Liste des marchands</h1> -->
+        <!-- <a data-id="persistent" href="#page3" class="bkg-Orange" data-transition="slide"> Carte</a> -->
+        <a data-id='persistent' href="#page3" class="bkg-Orange"  id="ListeDesMarchands" data-transition="slide" > Liste des marchands </a>
 
-    <a data-id='persistent' href="#page3" id="ListeDesMarchands" data-transition="slide" > Liste des marchands </a>
+        <!-- <a data-id="persistent" id="OffresSpeciale" class="bkg-Orange" onclick="offres()"> Offres spéciales</a> -->
+        <a data-id="persistent" id="events" href="#page4" class="bkg-Orange" data-transition="slide"> Événements</a>
+
+    </div><!-- /header -->
+
+    <!-- <div data-role="header" class="header" data-theme="b"> -->
+        <!-- <h1> </h1> -->
+
 <!--       onclick="ListeDesMarchands()" -->
- <a data-id="persistent" id="events" href="#page4" data-transition="slide"> Événements</a>
 <!--        onclick="events()-->
 <!--        <a data-id="persistent"  onclick="localStorage.clear()">clear</a>-->
 
-    </div> <!-- header -->
+    <!-- </div> header -->
+
      <div role="main" class="ui-content second">
         <div class="Carte grid">
         <div style=" font-size: 28px;
                     text-align: center;
                     color: white;
-                    background-color: #333;" id="titreCarte">
-             Carte de membre
+                    font-family: Google Sans, sans-serif;
+                    background-color: #FFC107;" id="titreCarte">
+             Carte avantage de membre
             </div>
             <div>
 <!--                <img style="width: 40vw; float:right " src="css/Screen%20Shot%202018-09-21%20at%208.12.15%20PM.png"/>-->
-                  <label id="organisation" style="padding-bottom:30px; text-align: center; font-size: 7vw" ><h1></h1></label><br>
+                  <label id="organisation" style="padding-bottom:30px; text-align: center; font-size: 7vw;color: #039be5;" ><h1></h1></label><br>
             </div>
-                    <table style="width: 100%; line-height: 28px">
+                    <table style="width: 100%; line-height: 28px; color: #039be5;">
                         <tr>
                             <th>
-                                <label id="Numero"><h5 style="padding-bottom:30px;"></h5></label><br>
+                                <label id="Numero"><h5 style="padding-bottom:30px;color: #039be5;"></h5></label><br>
                             </th>                  
                         </tr>
                       <tr>
-                        <th align="left"><label id="name" style=" margin: 0 0; !important; " ><h1></h1></label></th>
+                        <th align="left"><label id="name" style=" margin: 0 0; !important;color: #039be5; " ><h1></h1></label></th>
                       </tr>
                       <tr>
-                        <td align="left"><label id="compagny"  style="width: 50%; word-wrap: break-word; font-size: 3vw"><p></p></label></td>
+                        <td align="left"><label id="compagny"  style="width: 50%; word-wrap: break-word; font-size: 3vw;color: #039be5;"><p></p></label></td>
                       </tr>
                     </table>
 <!--
@@ -128,7 +141,7 @@
             });
             </script>
             </div>
-            <div style="text-align: right;">
+            <div style="text-align: right;color: #039be5;">
             Date d'expiration: Septembre 2020
             </div>
             
@@ -170,10 +183,10 @@
     ****************************
 -->
 <div data-role="page" id="page3"> 
-<div data-role="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
-    <h1 style=" font-weight:normal !important;font-size: 1.1em;">Liste des marchands</h1>
-    <a data-id="persistent" href="#page2" data-transition="slide"> Carte</a>
-    <a data-id="persistent" id="OffresSpeciale" onclick="offres()"> Offres spéciales</a>
+<div data-role="header" class="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
+    <h1  style="font-weight: 500; font-size: 1.1em;">Liste des marchands</h1>
+    <a data-id="persistent" href="#page2" class="bkg-Orange" data-transition="slide"> Carte</a>
+    <a data-id="persistent" id="OffresSpeciale" class="bkg-Orange" onclick="offres()"> Offres spéciales</a>
 </div><!-- /header -->
  
 <div data-role="collapsibleset" data-theme="b" data-content-theme="e">
@@ -239,9 +252,9 @@
 -->
 <!--    Page des événements\activités-->
 <div data-role="page" id="page4"> 
-    <div data-role="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
-        <h1 style=" font-weight:normal !important;font-size: 1.1em;"> Événements/Activités</h1>
-        <a data-id="persistent" href="#page2" data-transition="slide" > Carte</a>
+    <div data-role="header" class="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
+        <h1 class="bkg-Orange" style=" font-weight:normal !important;font-size: 1.1em;"> Événements/Activités</h1>
+        <a data-id="persistent" href="#page2" class="bkg-Orange" data-transition="slide" > Carte</a>
     </div>
     <div>
         
@@ -280,9 +293,9 @@
 <!--    Page des offres spéciales des marchands-->
 <div data-role="page" id="page5"> 
     <div data-role="header" style="overflow:hidden;background-color: #333; color: white;" data-id="persistent" data-position="fixed">
-        <h1 style=" font-weight:normal !important;font-size: 1.1em;"> Offres spéciales</h1>
-        <a data-id="persistent" href="#page2" data-transition="slide" > Carte</a>
-        <a data-id="persistent" href="#page3" data-transition="slide"> Liste des marchands</a>
+        <h1 class="bkg-Orange" style=" font-weight:normal !important;font-size: 1.1em;"> Offres spéciales</h1>
+        <a data-id="persistent" href="#page2" class="bkg-Orange" data-transition="slide" > Carte</a>
+        <a data-id="persistent" href="#page3" class="bkg-Orange" data-transition="slide"> Liste des marchands</a>
     </div>
 <div>
     
