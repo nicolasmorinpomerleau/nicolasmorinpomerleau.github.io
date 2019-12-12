@@ -1,5 +1,5 @@
 {
-  "name": "Notifications Abou",
+  "name": "Notifications_Abou",
   "icons": [
     {
       "src": "/icon_iOS_152x152.png",
