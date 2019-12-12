@@ -2,7 +2,7 @@
   "name": "Notifications_Abou",
   "icons": [
     {
-      "src": "/icon_iOS_152x152.png",
+      "src": "/www/icon_iOS_152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "density": 1.0
