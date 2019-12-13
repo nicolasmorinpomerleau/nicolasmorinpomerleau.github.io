@@ -48,7 +48,7 @@ function ListeDesMarchands(){
         }
 //$('#MyListView').listview().listview('refresh');
     else{
-        $.getJSON(localStorage.urlMarchands,function(data,status){    
+        $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){    
                 $('#restaurationDIV').empty();
                 $('#restaurationDIV').append(data[0].restauration);
                 $('#restaurationDIV').listview('refresh'); /* to refresh the div */
