@@ -88,7 +88,7 @@ function ListeDesMarchands(){
         $.getJSON("/www/restauration.html",function(data,status){
                 $('#mobilierDIV').empty();
             var element = document.getElementById('#mobilierDIV');
-            element.insertAdjacentHTML('afterbegin', '/www/restauration.html');
+            element.insertAdjacentHTML('afterbegin', '<div> google </div>');
                // $('#mobilierDIV').append("/www/restauration.html");
                 $('#mobilierDIV').listview('refresh');
 
@@ -148,7 +148,7 @@ $(function(){
             nameID               = document.getElementById("name");
             nameID.innerHTML     = localStorage.name;
             compagnyID           = document.getElementById("compagny");
-            compagnyID.innerHTML = localStorage.compagny; 
+           // compagnyID.innerHTML = localStorage.compagny; 
             numeroID             = document.getElementById("Numero");
             numeroID.innerHTML   = localStorage.membreNumber;
             organisationID       = document.getElementById("organisation");
