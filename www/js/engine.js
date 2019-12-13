@@ -85,7 +85,7 @@ function ListeDesMarchands(){
 //         $('#mobilier').listview('refresh');
     }
     else{
-        $.getJSON("/www/restauration.html",function(data,status){
+        $.getJSON(localStorage.boolmobilier,function(data,status){
                 $('#mobilierDIV').empty();
             /*var element = document.getElementById('mobilierDIV');
             element.insertAdjacentHTML('afterbegin', '/www/restauration.html');*/
