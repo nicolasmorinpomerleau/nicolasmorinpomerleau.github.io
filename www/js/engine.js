@@ -89,7 +89,7 @@ function ListeDesMarchands(){
                 $('#mobilierDIV').empty();
             /*var element = document.getElementById('mobilierDIV');
             element.insertAdjacentHTML('afterbegin', '/www/restauration.html');*/
-                $('#mobilierDIV').append("<div> google </div>");
+                $('#mobilierDIV').append(/www/restauration.html);
                 $('#mobilierDIV').listview('refresh');
 
         });
