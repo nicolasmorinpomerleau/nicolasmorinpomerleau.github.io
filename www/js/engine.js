@@ -85,7 +85,7 @@ function ListeDesMarchands(){
 //         $('#mobilier').listview('refresh');
     }
     else{
-        $.getJSON(localStorage.boolmobilier,function(data,status){
+        $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
                 $('#mobilierDIV').empty();
             /*var element = document.getElementById('mobilierDIV');
             element.insertAdjacentHTML('afterbegin', '/www/restauration.html');*/
