@@ -85,14 +85,18 @@ function ListeDesMarchands(){
 //         $('#mobilier').listview('refresh');
     }
     else{
-        $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
+              $.get("/www/restauration.html", function(data){
+                 $(mobilierDIV).children("div:first").html(data);
+             });
+        
+       /* $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
                 $('#mobilierDIV').empty();
             /*var element = document.getElementById('mobilierDIV');
-            element.insertAdjacentHTML('afterbegin', '/www/restauration.html');*/
+            element.insertAdjacentHTML('afterbegin', '/www/restauration.html');
+
                 $('#mobilierDIV').append(/www/restauration.html);
                 $('#mobilierDIV').listview('refresh');
-
-        });
+        });*/
     };
 //    *************************************************************
 
