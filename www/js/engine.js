@@ -42,7 +42,7 @@ if(localStorage.boolrestauration  == "false"){
     document.getElementById("mobilier").style.display="none";
 }
 else{
-          $.get("/www/MerchantPage.html", function(data){
+          $.get("/www/merchantpage.html", function(data){
             // $(mobilierDIV).children("div:first").html(data);
              $('#merchantPage').append(data);
          });
