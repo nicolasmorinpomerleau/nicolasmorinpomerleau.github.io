@@ -43,7 +43,7 @@ if(localStorage.boolrestauration  == "false"){
 }
 else{
           $.get("/www/merchant.html", function(data){
-             $('#mobilierDIV').append(data);
+             $('#merchantPage').append(data);
          });
 };
 
