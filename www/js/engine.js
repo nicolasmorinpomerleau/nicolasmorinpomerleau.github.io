@@ -43,8 +43,7 @@ if(localStorage.boolrestauration  == "false"){
 }
 else{
           $.get("/www/merchantpage.html", function(data){
-            // $(mobilierDIV).children("div:first").html(data);
-             $('#merchantPage').append(data);
+             $('#mobilierDIV').append(data);
          });
 };
 
@@ -55,8 +54,6 @@ else{
 //    *************************************************************
     if(localStorage.boolrestauration  == "false"){
         document.getElementById("restauration").style.display="none";
-//        $('#restauration').style.display="none";
-//         $('#restauration').listview('refresh');
         }
 //$('#MyListView').listview().listview('refresh');
     else{
@@ -74,8 +71,6 @@ else{
 //                    à modifier pour les urls
     if(localStorage.boolprovinciaux  == "false"){
          document.getElementById("provinciaux").style.display="none";
-//        $('#provinciaux').style.display="none";
-//         $('#provinciaux').listview('refresh');
     }
     else{ 
         $.getJSON(localStorage.provinciaux,function(data,status){
@@ -93,8 +88,6 @@ else{
 //    *************************************************************
     if(localStorage.boolmobilier  == "false"){
         document.getElementById("mobilier").style.display="none";
-//        $('mobilier').style.display="none";
-//         $('#mobilier').listview('refresh');
     }
     else{
               $.get("/www/restauration.html", function(data){
@@ -119,8 +112,6 @@ else{
    
     if(localStorage.boolservices  == "false"){
         document.getElementById("service").style.display="none";
-//        $('#service').style.display="none";
-//         $('#service').listview('refresh');
     }
     else{
         $.getJSON(localStorage.services,function(data,status){
