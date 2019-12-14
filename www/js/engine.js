@@ -35,7 +35,19 @@ var nouveuMessage;
 
 
 function ListeDesMarchands(){
-    
+//    *************************************************************
+//    ************************ Merchant Page ************************
+//    *************************************************************
+if(localStorage.boolrestauration  == "false"){
+    document.getElementById("mobilier").style.display="none";
+}
+else{
+          $.get("/www/MerchantPage.html", function(data){
+            // $(mobilierDIV).children("div:first").html(data);
+             $('#mobilierDIV').append(data);
+         });
+};
+
 //    $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
 
 //    *************************************************************
