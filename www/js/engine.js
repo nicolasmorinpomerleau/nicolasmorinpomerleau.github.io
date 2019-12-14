@@ -233,48 +233,20 @@ function Validate(){
     numeroID.innerHTML = "#"+res.info.memberNumber;
     organisationID     = document.getElementById("organisation");
     organisationID.innerHTML = res.info.organisation;
+           
         
-    urlRestauration       = res.info.restauration;
-    urlMobilier           = res.info.mobilier;
-    urlService            = res.info.service;
-    urlProvinciaux        = res.info.provinciaux;
-    urlAutres             = res.info.autres;
-    urlEvents          = res.info.urlEvents;
-    urlOffers          = res.info.urlOffers;
-    codeBar            = res.info.codeBar;     
-
-    localStorage.Email         = email;
-    localStorage.code          = code;
-
-//        display rules
-    localStorage.booloffers       = res.info.booloffers;
-    localStorage.boolevents       = res.info.boolevents;
-    localStorage.boolmarchandlist = res.info.boolmarchandlist;
-    localStorage.boolrestauration = res.info.boolrestauration;
-    localStorage.boolservices     = res.info.boolservices;
-    localStorage.boolmobilier     = res.info.boolmobilier;
-    localStorage.boolprovinciaux  = res.info.boolprovinciaux;
-    localStorage.boolautre  = res.info.boolautre;
-
-//        pour afficher sur la carte
     localStorage.name          = res.info.name;
     localStorage.compagny      = res.info.company;
     localStorage.organisation  = res.info.organisation;
     localStorage.membreNumber  = "#"+res.info.memberNumber;
-        
-//        url WebView
-    localStorage.urlEvents     = urlEvents;
-    localStorage.urlOffers     = urlOffers;
-        
-//        code bar du membre
-    localStorage.codeBar       = codeBar;   
-    
-//        url des fichiers JSON
-    localStorage.mobilier       = urlMobilier;
-    localStorage.restauration   = urlRestauration;
-    localStorage.service        = urlService;
-    localStorage.provinciaux    = urlProvinciaux;
-    localStorage.autre          = urlAutres;
+    localStorage.codeBar       = res.info.code;
+        //        url WebView
+    localStorage.urlMarchand   = res.info.urlMarchand;
+    localStorage.urlOffres     = res.info.urlOffres;
+    localStorage.urlEvent      = res.info.urlEvent;
+     
+    localStorage.Email         = email;
+    localStorage.code          = code;
         
     window.location.href = "#page2";
     }
