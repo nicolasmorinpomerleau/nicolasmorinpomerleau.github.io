@@ -3,16 +3,30 @@
     background-color: #FFC107; /*#4184b9*/
     border-color: #1f1f1f;
     color: #fff;
-    text-shadow: 0 1px 0 #111;
+    /*text-shadow: 0 1px 0 #111;*/
 }
 
 #footer_2{
-    background-color: #487b3f !important;
+    background-color: #FFC107 !important;
     color: #fff !important;
 }
-
+#footer_2 a {
+    background-color:  #FFC107 !important;
+    font-size: medium!important;
+}
 /*
 h1{
     font-weight:normal !important;
     font-size: 1.1em;
 }*/
+
+h1{
+    border-color: #fff!important;
+}
+
+#restauration i {
+    float:left;
+    margin-right:10px;
+    position: relative;
+    top:2px;
+  }

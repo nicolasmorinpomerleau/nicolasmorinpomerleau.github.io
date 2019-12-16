@@ -5,12 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-    
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "> -->
+
     <title>Carte de membre virtuelle</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet"  href="css/jquery.mobile-1.4.5.min.css"/>
     <link rel="stylesheet" href="css/color.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/google.css" > 
+    <link rel="stylesheet" href="css/free-v4-shims.min.css" > -->
+
+    <!-- <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-add-css="false"></script>
+    <link href="https://use.fontawesome.com/releases/v5.12.0/css/svg-with-js.css" rel="stylesheet" /> -->
+  
+    <!-- <script src="js/b72fd8903d.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -31,8 +41,8 @@
           });
    </script>
 -->
-<script src="js/OneSignalSDK-2.js"></script>
-<script src="js/OneSignal.js"></script>
+<!-- <script src="js/OneSignalSDK-2.js"></script>
+<script src="js/OneSignal.js"></script> -->
 <script src="js/engine.js"></script>
 <script src="js/JsBarcode.all.min.js"></script></head>
 <body>
@@ -41,12 +51,12 @@
              pageouverture
     ****************************
 -->
-<!-- <div data-role="page" id="pageouverture">
+<div data-role="page" id="pageouverture">
     <div role="main" data-role="content">
           <h1 style="text-align: center; margin-top: 20%; color: #29435f">Ouverture de votre carte..</h1>
     </div> 
 </div>
-    -->
+    
 <!--
     ****************************
              page 1
@@ -77,6 +87,8 @@
         <a data-id='persistent' href="#page3" class="bkg-Orange"  id="ListeDesMarchands" data-transition="slide" > Liste des marchands </a>
         <a data-id="persistent" id="events" href="#page4" class="bkg-Orange" data-transition="slide"> Événements</a>
     </div><!-- /header -->
+    <button onclick="clear1()">Clear</button>
+  
      <div role="main" class="ui-content second">
         <div class="Carte grid">
             <!-- 1 -->
@@ -114,7 +126,6 @@
         </div>
     </div> <!-- Content -->
 </div> <!-- /Page2 -->
- 
 <!--
     ****************************
              page 3
@@ -122,64 +133,95 @@
 -->
 <div data-role="page" id="page3" style="background-color:#eaeded;!important"> 
 <div data-role="header" class="header" style="overflow:hidden; background-color: #333; color: white;" data-id="persistent" data-position="fixed">
-    <h1  style="font-weight: 500; font-size: 1.1em;">Liste des marchands</h1>
+    <h1 style="font-weight: 500; font-size: 1.1em;">Liste des marchands</h1>
     <a data-id="persistent" href="#page2" class="bkg-Orange" data-transition="slide"> Carte</a>
     <a data-id="persistent" id="OffresSpeciale" class="bkg-Orange" onclick="offres()"> Offres spéciales</a>
 </div><!-- /header -->
  
 <div data-role="collapsibleset" data-theme="b" data-content-theme="e">
-<div id="merchantPage"></div>
-<!--    *************** Restauration page ***************-->
-<!--    *************************************************-->
-<!--    <div id="status-message" data-role="collapsible">-->
-    <!-- <div id="restauration"> 
-    <div data-role="collapsible">
-            <h1 >Restauration</h1> 
-            <div id="restaurationDIV"> </div>
+<!-- **************************************************** -->
+<!-- **************************************************** -->
+<!-- <i class="fas fa-utensils"></i>
+ 
+<i class="fa fa-futboll-0"></i>    -->
+<p style="font-family:Google Sans, sans-serif!important; color: #0073b1;font-size: x-large;"> Toujours présenter votre carte avant de placer votre commande</p>
+  <div data-role="collapsibleset" data-theme="b" data-content-theme="e" style="margin-left: 3em!important; margin-right: 3em!important;">
+  <!--    *************** Restauration page ***************-->
+  <!--    *************************************************-->
+  <!--    <div id="status-message" data-role="collapsible">-->
+     
+    <div style="margin-bottom:7px;"> 
+      <div   data-role="collapsible" style="background-color:#ffffff!important;">
+              <h1  style="display: inline!important"><img id="imgResto" src="img/restaurant.png" />  Restauration </h1> 
+              <div id="restaurationDIV"> </div>
+      </div>
+    </div> 
+  <!--    ***************   Service page    ***************-->
+  <!--    *************************************************-->
+    <div  id="service" style="margin-bottom:7px;">
+      <div data-role="collapsible" style="background-color:#ffffff!important; color:#373737!important">
+              <h1> <img id="imgCare" src="img/care.png" /> Bien être </h1>
+              <div id="serviceDIV"> </div>
+      </div>
+    </div> 
+  <!--    ****************  Mobilier page  ****************-->
+  <!--    *************************************************--> 
+    <div id="mobilier" style="margin-bottom:7px;"> 
+      <div  data-role="collapsible" style="background-color:#ffffff!important; color:#373737!important">
+              <h1><img id="imgRose" src="img/rose.png"/>Fleuriste </h1>
+              <div id="mobilierDIV"> </div>
+      </div>
     </div>
-    </div> -->
-<!--    ***************   Service page    ***************-->
-<!--    *************************************************-->
-    <!-- <div  id="service">
-    <div data-role="collapsible">
-            <h1 >Service</h1>
-            <div id="serviceDIV"> </div>
+  <!--    ***************    Avantages provinciaux page    ***************-->
+  <!--    ****************************************************************--> 
+    <div id="provinciaux" style="background-color:#ffffff!important; color:#373737!important; margin-bottom:7px;"> 
+      <div data-role="collapsible"> 
+              <h1> <img id="imgMecanic" src="img/hand.png" /> Mécanique </h1>
+              <div id="provinciauxDIV"> </div>
+      </div>
     </div>
-    </div>  -->
-<!--    ****************  Mobilier page  ****************-->
-<!--    *************************************************--> 
-    <!-- <div id="mobilier"> 
-    <div  data-role="collapsible">
-            <h1 >Mobilier</h1>
-            <div id="mobilierDIV"> </div>
-    </div>
-    </div> -->
-<!--    ***************    Avantages provinciaux page    ***************-->
-<!--    ****************************************************************--> 
-    <!-- <div id="provinciaux"> 
-    <div data-role="collapsible">
-            <h1>Avantages provinciaux</h1>
+  <!--    ***************    Avantages provinciaux page    ***************-->
+  <!--    ****************************************************************--> 
+   <div id="provinciaux" style="background-color:#ffffff!important; color:#373737!important; margin-bottom:7px;"> 
+        <div data-role="collapsible"> 
+            <h1> <img id="imgCloth" src="img/clothing-hanger.png" /> Prêt à porter </h1>
             <div id="provinciauxDIV"> </div>
+        </div>
     </div>
-    </div> -->
+  <!--    ***************    Avantages provinciaux page    ***************-->
+  <!--    ****************************************************************--> 
+   <div id="provinciaux" style="background-color:#ffffff!important; color:#373737!important; margin-bottom:7px;"> 
+        <div data-role="collapsible"> 
+            <h1> <img id="imgFlash" src="img/flash.png" /> Informatique </h1>
+            <div id="provinciauxDIV"> </div>
+        </div>
+    </div>
+    <!--    ***************    Avantages provinciaux page    ***************-->
+    <!--    ****************************************************************--> 
+    <div id="provinciaux" style="background-color:#ffffff!important; color:#373737!important; margin-bottom:7px;"> 
+         <div data-role="collapsible"> 
+            <h1> <img id="imgBed" src="img/bed.png"/> Hébergement </h1>
+            <div id="provinciauxDIV"> </div>
+        </div>
+    </div>
+    <!-- fin de la liste des marchands -->
+  </div> 
+<!-- **************************************************** -->
+<!-- **************************************************** -->
 </div>
-
    <div id="autre"></div>
 <!--    ***************       Footer      ***************-->
 <!--    *************************************************--> 
     <div id="footer_2" data-role="footer" data-type="footer" data-position="fixed"  style="overflow:hidden; text-align: center;">
 <!--        data-id="persistent" to persist in the slide transition-->
-    <hp style="text-align:center;"><a  style="color: white;font-weight:normal !important;text-decoration: none !important;" href="http://www.amcreatives.ca" target="_blank">amcreatives.ca</a>&ensp;&ensp;&ensp;<a style="color: white;font-weight:normal !important;text-decoration: none !important;" href="http://amcreatives.ca/#politique" target="_blank">politique de confidentialité </a></hp>
+    <hp style="text-align:center;"><a  style="color: white;font-weight:medium !important;text-decoration: none !important;" href="http://www.amcreatives.ca" target="_blank">amcreatives.ca</a>&ensp;&ensp;&ensp;<a style="color: white;font-weight:medium !important;text-decoration: none !important;" href="http://amcreatives.ca/politique.html" target="_blank">politique de confidentialité </a></hp>
     </div> <!-- Footer -->
     
     <script>
-//        var b= 2;
-//                 $('#provinciaux').color="blue";
-    ListeDesMarchands();
+        ListeDesMarchands();
     </script>
     
 </div><!-- /Page3 -->
-
 <!--
     ****************************
              page 4

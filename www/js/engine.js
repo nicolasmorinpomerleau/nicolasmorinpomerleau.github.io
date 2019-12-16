@@ -209,6 +209,10 @@ window.addEventListener("load",function() {
     }, 0);
 });
 
+function clear1(){
+    localStorage.clear();
+    alert("Clear");
+}
 
 function Validate(){        
     email = document.getElementById('email').value;
@@ -228,7 +232,7 @@ function Validate(){
     nameID               = document.getElementById("name");
     nameID.innerHTML     = res.info.name;
     compagnyID           = document.getElementById("compagny");
-    compagnyID.innerHTML = res.info.company;
+    // compagnyID.innerHTML = res.info.company;
     numeroID           = document.getElementById("Numero");
     numeroID.innerHTML = "#"+res.info.memberNumber;
     organisationID     = document.getElementById("organisation");
@@ -239,7 +243,7 @@ function Validate(){
     localStorage.compagny      = res.info.company;
     localStorage.organisation  = res.info.organisation;
     localStorage.membreNumber  = "#"+res.info.memberNumber;
-    localStorage.codeBar       = res.info.code;
+    localStorage.codeBar       = "#"+res.info.memberNumber;
         //        url WebView
     localStorage.urlMarchand   = res.info.urlMarchand;
     localStorage.urlOffres     = res.info.urlOffres;
