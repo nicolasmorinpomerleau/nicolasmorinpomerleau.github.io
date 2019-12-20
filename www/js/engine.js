@@ -45,98 +45,7 @@ else{
           $.get("/www/merchant.html", function(data){
              $('#merchantPage').append(data);
          });
-};
-
-//    $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
-
-//    *************************************************************
-//    ************************ Restauration ************************
-//    *************************************************************
-   /* if(localStorage.boolrestauration  == "false"){
-        document.getElementById("restauration").style.display="none";
-        }*/
-//$('#MyListView').listview().listview('refresh');
-   /*else{
-        $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){    
-                $('#restaurationDIV').empty();
-                $('#restaurationDIV').append(data[0].restauration);
-                $('#restaurationDIV').listview('refresh'); 
-        });
-    };*/
-//    *************************************************************
-
-//    *************************************************************
-//    ************************ Provinciaux ************************
-//    *************************************************************
-//                    à modifier pour les urls
-   /* if(localStorage.boolprovinciaux  == "false"){
-         document.getElementById("provinciaux").style.display="none";
-    }
-    else{ 
-        $.getJSON(localStorage.provinciaux,function(data,status){
-                $('#provinciauxDIV').empty();
-                $('#provinciauxDIV').append(data[0].provinciaux);
-                $('#provinciauxDIV').listview('refresh');
-
-        });
-    };*/
-//    *************************************************************
-
-    
-//    *************************************************************
-//    ************************ Mobilier ************************
-//    *************************************************************
-   /* if(localStorage.boolmobilier  == "false"){
-        document.getElementById("mobilier").style.display="none";
-    }
-    else{
-              $.get("/www/restauration.html", function(data){
-                // $(mobilierDIV).children("div:first").html(data);
-                 $('#mobilierDIV').append(data);
-             });*/
-        
-       /* $.getJSON("https://s3-eu-west-1.amazonaws.com/virtualcard/restauration.json",function(data,status){
-                $('#mobilierDIV').empty();
-            /*var element = document.getElementById('mobilierDIV');
-            element.insertAdjacentHTML('afterbegin', '/www/restauration.html');
-
-                $('#mobilierDIV').append(/www/restauration.html);
-                $('#mobilierDIV').listview('refresh');
-        });*/
-    };
-//    *************************************************************
-
-//    *************************************************************
-//    ************************ Service ************************
-//    *************************************************************
-   
-  /*  if(localStorage.boolservices  == "false"){
-        document.getElementById("service").style.display="none";
-    }
-    else{
-        $.getJSON(localStorage.services,function(data,status){
-                $('#serviceDIV').empty();
-                $('#serviceDIV').append(data[0].service);
-                $('#serviceDIV').listview('refresh');
-        });
-    };*/
-//    *************************************************************
-
-//    *************************************************************
-//    ************************ Autre ************************
-//    *************************************************************
-   /* if(localStorage.boolautre  == "false"){
-        document.getElementById("autre").style.display="none";
-//        $('#autre').style.display="none";
-    }
-    else{
-        $.getJSON(localStorage.autre,function(data,status){
-                $('#autre').empty();
-                $('#autre').append(data[0].autre);
-                $('#autre').listview('refresh');
-        });
-    }*/
-//    *************************************************************
+}; //ListeDesMarchands functions
 
 //    *************************************************************
 //    ************************ Offres Spéciale ********************
@@ -144,11 +53,10 @@ else{
     if(localStorage.booloffers == "false"){
         document.getElementById("OffresSpeciale").style.display="none";
 //        $('#OffresSpeciale').style.display="none";
-    }
+    };
 
 //    *************************************************************
     
-};
 
 
 $(function(){
