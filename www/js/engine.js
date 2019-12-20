@@ -38,14 +38,15 @@ function ListeDesMarchands(){
 //    *************************************************************
 //    ************************ Merchant Page ************************
 //    *************************************************************
-if(localStorage.boolrestauration  == "false"){
-    document.getElementById("mobilier").style.display="none";
-}
-else{
+    if(localStorage.boolrestauration  == "false"){
+     document.getElementById("mobilier").style.display="none";
+    }
+    else{
           $.get("/www/merchant.html", function(data){
              $('#merchantPage').append(data);
          });
-}; //ListeDesMarchands functions
+    }; 
+};//ListeDesMarchands functions
 
 //    *************************************************************
 //    ************************ Offres Spéciale ********************
