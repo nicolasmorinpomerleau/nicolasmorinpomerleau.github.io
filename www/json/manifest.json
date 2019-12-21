@@ -1,8 +1,8 @@
 {
-  "name": "Notifications_Abou",
+  "name": "Virka",
   "icons": [
     {
-      "src": "/www/icon_iOS_152x152.png",
+      "src": "/www/icon.png",
       "sizes": "152x152",
       "type": "image/png",
       "density": 1.0
@@ -10,5 +10,5 @@
   ],
   "start_url": "http://amcreatives.ca/www/index.html",
   "display": "standalone",
-  "scope": "/"
+  "orientation": "landscape"
 }
