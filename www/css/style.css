@@ -113,8 +113,22 @@ p{
 @media screen and (max-width: 480px){
   .grid2{
   grid-row-gap: 2vw;
+  }
 }
+  @media screen and (orientation:portrait) {
+  .Collabs{
+  margin-left: 1em!important;
+  margin-right: 1em!important;
+  }
+} 
+
+  @media screen and (orientation:landscape) {
+.Collabs{
+  margin-left: 2em!important;
+  margin-right: 2em!important;
+  }
 }
+
 td{
   text-align:left;
 }
@@ -129,20 +143,6 @@ td{
     border-width:thin;
     background-color: #a9a3a824;
 }
-@media screen and (orientation:portrait) {
-  .Collabs{
-  margin-left: 1em!important;
-  margin-right: 1em!important;
-  }
-} 
-
-@media screen and (orientation: landscape) {
-  .Collabs{
-  margin-left: 3em!important;
-  margin-right: 3em!important;
-  }
-}
-  
  #barcode{
     width: 50%;
     margin-top: -10px;
@@ -156,13 +156,17 @@ td{
 }
 a {
   background-color: #ffffff!important;
+  /*color: #84878a!important;*/
   border: 0;         
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
   font-family: Google Sans, sans-serif!important;
   font-size: 2 rem;
   line-height: 1.5;
+  
   color: #696c6f!important;
+ /* font-family: Google, sans-serif !important;
+  font-size: medium!important;*/
 }
 .ui-page-theme-b .ui-btn, html .ui-bar-b .ui-btn, html .ui-body-b .ui-btn, 
 html body .ui-group-theme-b .ui-btn, html head+body .ui-btn.ui-btn-b, 
@@ -184,35 +188,87 @@ html head+body .ui-btn.ui-btn-b:visited{
   height:7%;
   margin-right:5px;
 }
+
+@media screen and (orientation:portrait){
+  #imgResto{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
+}
+
 #imgCare{
   width:7%;
   height:7%;
   margin-right:5px;
+}
+@media screen and (orientation:portrait){
+  #imgCare{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
 }
 #imgMecanic{
   width:10%;
   height:10%;
   margin-right:5px;
 }
+@media screen and (orientation:portrait){
+  #imgMecanic{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
+}
 #imgRose{
   width:10%;
   height:10%;
   margin-right:5px;
+}
+
+@media screen and (orientation:portrait){
+  #imgRose{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
 }
 #imgCloth{
   width:10%;
   height:10%;
   margin-right:5px;
 }
+@media screen and (orientation:portrait){
+  #imgCloth{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
+}
 #imgFlash{
   width:10%;
   height:10%;
   margin-right:5px;
 }
+@media screen and (orientation:portrait){
+  #imgFlash{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
+}
 #imgBed{
   width:10%;
   height:10%;
   margin-right:5px;
+}
+@media screen and (orientation:portrait){
+  #imgBed{
+    width:15%;
+    height:15%;
+    margin-right:5px;
+  }
 }
 #parallelogram {
   width: 150px;
