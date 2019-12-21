@@ -9,5 +9,6 @@
     }
   ],
   "start_url": "http://amcreatives.ca/www/index.html",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "landscape"
 }
