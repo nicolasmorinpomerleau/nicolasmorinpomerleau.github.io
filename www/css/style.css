@@ -129,6 +129,20 @@ td{
     border-width:thin;
     background-color: #a9a3a824;
 }
+@media screen and (orientation:portrait) {
+  .Collabs{
+  margin-left: 1em!important;
+  margin-right: 1em!important;
+  }
+} 
+
+@media screen and (orientation:landscape) {
+.Collabs{
+  margin-left: 3em!important;
+  margin-right: 3em!important;
+  }
+}
+  
  #barcode{
     width: 50%;
     margin-top: -10px;
