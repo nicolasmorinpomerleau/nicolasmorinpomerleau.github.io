@@ -234,6 +234,21 @@ html head+body .ui-btn.ui-btn-b:visited{
     margin-right:5px;
   }
 }
+
+#imgAll{
+  width:8%;
+  height:8%;
+  margin-right:5px;
+}
+
+@media screen and (orientation:portrait){
+  #imgAll{
+    width:12%;
+    height:12%;
+    margin-right:5px;
+  }
+}
+
 #imgCloth{
   width:10%;
   height:10%;
@@ -287,6 +302,53 @@ html head+body .ui-btn.ui-btn-b:visited{
     border-right: 14px solid transparent;
     border-top: 22px solid #C45500;
     float: left;
+  }
+}
+
+@media screen and (min-width:750px){
+  #shape {
+    border-top: 34px solid #C45500;
+  }
+}
+
+@media screen and (min-width:800px){
+  #shape {
+    border-top: 43px solid #C45500;
+  }
+}
+@media screen and (min-width:900px){
+  #shape {
+    border-top: 48px solid #C45500;
+  }
+}
+@media screen and (max-width:600px){
+  #shape {
+    border-top: 31px solid #C45500;
+  }
+}
+@media screen and (max-width:540px){
+  #shape {
+    border-top: 29px solid #C45500;
+  }
+}
+@media screen and (max-width:500px){
+  #shape {
+    border-top: 26px solid #C45500;
+  }
+}
+@media screen and (max-width:400px){
+  #shape {
+    border-top: 20px solid #C45500;
+  }
+}
+@media screen and (max-width:380px){
+  #shape {
+    border-top: 18px solid #C45500;
+  }
+}
+@media screen and (max-width:310px){
+  #shape {
+    border-top: 16px solid #C45500;
   }
 }
 #oct{
