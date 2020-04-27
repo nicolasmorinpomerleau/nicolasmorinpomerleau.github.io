@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+     <!-- *********** ************** *********** -->
+ <!-- *********** Bootstrap code *********** -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta http-equiv="x-ua-compatible" content="ie=edge">
+ <title>Material Design for Bootstrap</title>
+ <!-- MDB icon -->
+ <!-- <link rel="icon" href="MDB-Free_4.16.0/img/mdb-favicon.ico" type="image/x-icon"> -->
+ <link rel="icon" href="img/icon.webp" type="image/x-icon">
+
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+ <!-- Google Fonts Roboto -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+ <!-- Bootstrap core CSS -->
+ <link rel="stylesheet" href="MDB-Free_4.16.0/css/bootstrap.min.css">
+ <!-- Material Design Bootstrap -->
+ <link rel="stylesheet" href="MDB-Free_4.16.0/css/mdb.min.css">
+ <!-- Your custom styles (optional) -->
+ <link rel="stylesheet" href="MDB-Free_4.16.0/css/style.css">
+
+   <!-- jQuery -->
+<script type="text/javascript" src="MDB-Free_4.16.0/js/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="MDB-Free_4.16.0/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="MDB-Free_4.16.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="MDB-Free_4.16.0/js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+
+<!-- *********** Bootstrap code *********** -->
+<!-- *********** ************** *********** -->
+
+    <link href="packages/core/main.css" rel="stylesheet" />
+    <link href="packages/daygrid/main.css" rel="stylesheet" />
+    <link href="packages/timegrid/main.css" rel="stylesheet" />
+    <link href="packages/list/main.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="packages/core/main.js"></script>
+    <script src="packages/interaction/main.js"></script>
+    <script src="packages/daygrid/main.js"></script>
+    <script src="packages/timegrid/main.js"></script>
+    <script src="packages/list/main.js"></script>
+
+
+    <style>
+      body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 20px!important;
+      }
+
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <img src="img/logo.jpg" alt="logo">
+    <style>
+      .champs {
+        width: 50%;
+      }
+      .Comment {
+        width: 50%;
+        height: 30%;
+      }
+    </style>
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4">
+        <header>
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright"
+            >&times;</span
+          >
+          <hr />
+        </header>
+        <div class="w3-container">
+          <form class="text-center border border-light p-5" action="#!">
+
+            <p class="h4 mb-4">Réservation de RDV : <h3 id="modalTitle"></h3></p>
+          
+            <!-- Name -->
+            <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nom">
+          
+            <!-- Email -->
+            <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Courriel">
+          
+            <!-- Tel -->
+            <input type="tel" id="defaultContactFormTel" class="form-control mb-4" placeholder="Téléphone">
+
+            <!-- Subject -->
+            <label>Service</label>
+            <select class="browser-default custom-select mb-4" id="Mobility" name="Mobility">
+            <option value="" disabled>Sélectionnez un service</option>
+            <option selected="">Traitement</option>
+            <option>Coupe & brushing</option>
+            <option>Décoloration</option>
+            <option>Coiffure haute</option>
+            <option>Permanente</option>
+            </select>
+          
+            <!-- Message -->
+            <div class="form-group">
+                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2"  rows="3" placeholder="Message"></textarea>
+            </div>
+            <!-- Send button -->
+            <button class="btn btn-info btn-block" type="submit" onclick="bookDate()">Réserver</button>
+          
+          </form>
+         </div>
+      </div>
+    </div>
+    <div id="calendar"></div>
+  </body>
+  <script src="index.min.js"></script>
+</html>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+ 
+<style>
+body {
+	background-color: #f2f4f6;;
+	padding: 1.25em; 
+}
+</style>
+
